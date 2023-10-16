@@ -1,3 +1,5 @@
+import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss/webpack'
+
 const config = {
   projectName: 'taro-skyline',
   date: '2023-10-15',
@@ -37,6 +39,15 @@ const config = {
                 }
               }
             }
+          }
+        }
+      }).merge({
+        plugin: {
+          install: {
+            plugin: UnifiedWebpackPluginV5,
+            args: [{
+              appType: 'taro'
+            }]
           }
         }
       })
